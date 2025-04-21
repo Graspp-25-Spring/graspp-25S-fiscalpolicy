@@ -1,0 +1,23 @@
+import pandas as pd
+import requests
+
+# Fetch the data.
+df = pd.read_csv("https://ourworldindata.org/grapher/gdp-per-capita-worldbank.csv?v=1&csvType=full&useColumnShortNames=true", storage_options = {'User-Agent': 'Our World In Data data fetch/1.0'})
+
+# Fetch the metadata
+metadata = requests.get("https://ourworldindata.org/grapher/gdp-per-capita-worldbank.metadata.json?v=1&csvType=full&useColumnShortNames=true").json()
+# Define the countries of interest
+countries = ["Indonesia", "Japan", "United States", "Brazil", "India", "China", "France", "Mexico"]
+
+# Filter the dataframe
+GDP_clean = df[
+    (df['Entity'].isin(countries)) &
+    (df['Year'] >= 2005) &
+    (df['Year'] <= 2020)
+]
+
+# Reset index for convenience
+GDP_clean = GDP_clean.reset_index(drop=True)
+
+# Display result
+print(GDP_clean.head())
