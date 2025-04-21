@@ -19,3 +19,10 @@ df_macro_nz = df_macro_nz.rename({"ISO3":'country', "year":'date'}, axis=1)
 df_macro_nz.head(2)
 df_oecd_nz = df_oecd_nz.rename({"REF_AREA":'country', "TIME_PERIOD":'date', 'OBS_VALUE':'ULCE'}, axis=1).drop(["MEASURE", "UNIT_MEASURE"], axis=1)
 df_oecd_nz.head(2)
+df_oecd_nz.date.dtype
+df_oecd_nz.date = pd.PeriodIndex(df_oecd_nz.date, freq='Q').to_timestamp()
+df_oecd_nz.date.dtype
+df_macro_nz.date.dtype
+df_macro_nz.head(2)
+df_macro_nz.date = pd.to_datetime(df_macro_nz.date, format = '%Y')
+df_macro_nz.date.dtype
