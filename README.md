@@ -32,3 +32,9 @@ This question tries to examine how governments adjust and allocate spending (e.g
 A higher dependency ratio leads to a shift in fiscal policy toward social sectors (health, pensions, education), and away from capital expenditure (e.g., infrastructure).
 
 ## 📊 Data and Variables
+
+- Data point 1:
+   - Description: 
+   - Source: 
+   - Country/Entity:
+   
