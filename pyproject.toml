@@ -1,0 +1,13 @@
+[project]
+name = "graspp-25s-fiscalpolicy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "matplotlib>=3.9.4",
+    "numpy>=2.0.2",
+    "pandas>=2.2.3",
+    "requests>=2.32.3",
+    "seaborn>=0.13.2",
+]
