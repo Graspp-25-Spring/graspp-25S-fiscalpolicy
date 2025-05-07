@@ -79,6 +79,7 @@ def add_padding_to_chart(chart, left, top, right, bottom, background):
     image.paste(chart, (left, top))
     return image
 
+# === Creating Age Distribution ===
 def create_age_distribution(female_df, male_df, country_code, year):
     df_f = female_df[female_df.country_code == country_code].loc[::-1]
     df_m = male_df[male_df.country_code == country_code].loc[::-1]
@@ -88,6 +89,7 @@ def create_age_distribution(female_df, male_df, country_code, year):
     
     return ax
 
+# === Creating Grid Age Distribution ===
 def create_grid(figures, pad, ncols):
     nrows = int(len(figures) / ncols) + (len(figures) % ncols > 0)
     size = figures[0].size

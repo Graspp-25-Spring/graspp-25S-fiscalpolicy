@@ -1,0 +1,65 @@
+Country,ISO3,income_level
+Andorra,AND,High income
+Argentina,ARG,Upper middle income
+Armenia,ARM,Upper middle income
+Australia,AUS,High income
+Bangladesh,BGD,Lower middle income
+Bolivia,BOL,Lower middle income
+Brazil,BRA,Upper middle income
+Canada,CAN,High income
+Chile,CHL,High income
+China,CHN,Upper middle income
+Colombia,COL,Upper middle income
+Cyprus,CYP,High income
+Czechia,CZE,High income
+Ecuador,ECU,Upper middle income
+"Egypt, Arab Rep.",EGY,Lower middle income
+Ethiopia,ETH,Low income
+Germany,DEU,High income
+Greece,GRC,High income
+Guatemala,GTM,Upper middle income
+"Hong Kong SAR, China",HKG,High income
+India,IND,Lower middle income
+Indonesia,IDN,Upper middle income
+"Iran, Islamic Rep.",IRN,Upper middle income
+Iraq,IRQ,Upper middle income
+Ireland,IRL,High income
+Japan,JPN,High income
+Jordan,JOR,Lower middle income
+Kazakhstan,KAZ,Upper middle income
+Kenya,KEN,Lower middle income
+"Korea, Rep.",KOR,High income
+Kyrgyz Republic,KGZ,Lower middle income
+Lebanon,LBN,Lower middle income
+Libya,LBY,Upper middle income
+Malaysia,MYS,Upper middle income
+Maldives,MDV,Upper middle income
+Mexico,MEX,Upper middle income
+Mongolia,MNG,Upper middle income
+Morocco,MAR,Lower middle income
+Myanmar,MMR,Lower middle income
+Netherlands,NLD,High income
+New Zealand,NZL,High income
+Nicaragua,NIC,Lower middle income
+Nigeria,NGA,Lower middle income
+Pakistan,PAK,Lower middle income
+Peru,PER,Upper middle income
+Philippines,PHL,Lower middle income
+Puerto Rico,PRI,High income
+Romania,ROU,High income
+Russian Federation,RUS,High income
+Serbia,SRB,Upper middle income
+Singapore,SGP,High income
+Slovak Republic,SVK,High income
+Tajikistan,TJK,Lower middle income
+Thailand,THA,Upper middle income
+Tunisia,TUN,Lower middle income
+Turkiye,TUR,Upper middle income
+Ukraine,UKR,Upper middle income
+United Kingdom,GBR,High income
+United States,USA,High income
+Uruguay,URY,High income
+Uzbekistan,UZB,Lower middle income
+"Venezuela, RB",VEN,Lower middle income
+Viet Nam,VNM,Lower middle income
+Zimbabwe,ZWE,Lower middle income
