@@ -32,6 +32,34 @@ def dependency_ratio_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
     df_long.to_csv(output_path, index=False)
     return df_long
 
+def dependency_ratio_old(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    df = pd.read_csv(raw_path, skiprows=4)
+
+    # Normalize column names: '1960 [YR1960]' → '1960'
+    df.columns = [col.split(' ')[0] if col[:4].isdigit() else col for col in df.columns]
+
+    df = df[df['Country Code'].isin(countries)]
+
+    years = [str(y) for y in range(2000, 2021)]
+    df = df[['Country Name', 'Country Code'] + years]
+
+    df_long = df.melt(
+        id_vars=['Country Name', 'Country Code'],
+        var_name='Year',
+        value_name='Dependency_Ratio'
+    )
+
+    df_long = df_long.rename(columns={
+        'Country Name': 'Country',
+        'Country Code': 'ISO3'
+    })
+
+    df_long['Year'] = df_long['Year'].astype(int)
+    df_long = df_long.sort_values(by=['Country', 'Year']).reset_index(drop=True)
+
+    df_long.to_csv(output_path, index=False)
+    return df_long
+
 def clean_health_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
     df = pd.read_csv(raw_path, skiprows=4)
 
@@ -167,3 +195,31 @@ def clean_income_level(raw_path, output_path, countries=SELECTED_COUNTRIES):
     df_filtered = df_clean[df_clean['ISO3'].isin(countries)]
     df_filtered.to_csv(output_path, index=False)
     return df_filtered
+
+def population_projection(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    df = pd.read_csv(raw_path, skiprows=4)
+
+    # Normalize column names: '1960 [YR1960]' → '1960'
+    df.columns = [col.split(' ')[0] if col[:4].isdigit() else col for col in df.columns]
+
+    df = df[df['Country Code'].isin(countries)]
+
+    years = [str(y) for y in range(2000, 2051)]
+    df = df[['Country Name', 'Country Code'] + years]
+
+    df_long = df.melt(
+        id_vars=['Country Name', 'Country Code'],
+        var_name='Year',
+        value_name='Population'
+    )
+
+    df_long = df_long.rename(columns={
+        'Country Name': 'Country',
+        'Country Code': 'ISO3'
+    })
+
+    df_long['Year'] = df_long['Year'].astype(int)
+    df_long = df_long.sort_values(by=['Country', 'Year']).reset_index(drop=True)
+
+    df_long.to_csv(output_path, index=False)
+    return df_long
