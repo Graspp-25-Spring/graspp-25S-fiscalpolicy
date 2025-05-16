@@ -40,7 +40,7 @@ def dependency_ratio_old(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     df = df[df['Country Code'].isin(countries)]
 
-    years = [str(y) for y in range(2000, 2021)]
+    years = [str(y) for y in range(2000, 2051)]
     df = df[['Country Name', 'Country Code'] + years]
 
     df_long = df.melt(
