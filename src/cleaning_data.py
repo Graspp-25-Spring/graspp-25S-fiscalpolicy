@@ -204,7 +204,7 @@ def population_projection(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     df = df[df['Country Code'].isin(countries)]
 
-    years = [str(y) for y in range(2000, 2051)]
+    years = [str(y) for y in range(1960, 2051)]
     df = df[['Country Name', 'Country Code'] + years]
 
     df_long = df.melt(
