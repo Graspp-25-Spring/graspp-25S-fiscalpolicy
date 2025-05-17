@@ -3,6 +3,8 @@
 __pycache__/
 *.py[cod]xa
 .DS_Store
+notes.ipynb
+
 
 # C extensions
 *.so
@@ -163,3 +165,8 @@ cython_debug/
 #.idea/
 .DS_Store
 data/.DS_Store
+notebooks/notes.ipynb
+data/interim/health_expenditure_1.csv
+data/interim/GDP_percapita_1.csv
+data/interim/GDP_percapita_2.csv
+.gitignore
