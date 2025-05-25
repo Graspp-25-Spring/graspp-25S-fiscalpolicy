@@ -21,9 +21,12 @@ COUNTRY_RENAME_MAP = {
 def dependency_ratio_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
     df = pd.read_csv(raw_path, skiprows=4)
 
+    # Normalize column names: '1960 [YR1960]' → '1960'
+    df.columns = [col.split(' ')[0] if col[:4].isdigit() else col for col in df.columns]
+
     df = df[df['Country Code'].isin(countries)]
 
-    years = [str(y) for y in range(2000, 2023)]
+    years = [str(y) for y in range(2000, 2051)]
     df = df[['Country Name', 'Country Code'] + years]
 
     df_long = df.melt(
@@ -53,7 +56,7 @@ def dependency_ratio_old(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     df = df[df['Country Code'].isin(countries)]
 
-    years = [str(y) for y in range(2000, 2023)]
+    years = [str(y) for y in range(2000, 2051)]
     df = df[['Country Name', 'Country Code'] + years]
 
     df_long = df.melt(
@@ -83,7 +86,7 @@ def dependency_ratio_young(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     df = df[df['Country Code'].isin(countries)]
 
-    years = [str(y) for y in range(2000, 2023)]
+    years = [str(y) for y in range(2000, 2051)]
     df = df[['Country Name', 'Country Code'] + years]
 
     df_long = df.melt(
@@ -218,7 +221,7 @@ def population(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     df = df[df['Country Code'].isin(countries)]
 
-    years = [str(y) for y in range(2000, 2023)]
+    years = [str(y) for y in range(2000, 2051)]
     df = df[['Country Name', 'Country Code'] + years]
 
     df_long = df.melt(
