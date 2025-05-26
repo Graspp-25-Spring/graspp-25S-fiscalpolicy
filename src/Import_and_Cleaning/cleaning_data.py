@@ -202,7 +202,7 @@ def clean_income_level(raw_path, output_path, countries=SELECTED_COUNTRIES):
     })
 
     # Filter only selected countries
-    df_filtered = df_clean[df_clean['ISO3'].isin(countries)]
+    df_filtered = df_clean[df_clean['ISO3'].isin(countries)].copy()
 
     # Rename country names using the defined mapping
     df_filtered['Country'] = df_filtered['Country'].replace(COUNTRY_RENAME_MAP)
@@ -212,6 +212,27 @@ def clean_income_level(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     return df_filtered
 
+def region(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    # Load the Excel file
+    df = pd.read_excel(raw_path)
+
+    # Select and rename relevant columns
+    df_clean = df[['Economy', 'Code', 'Region']].rename(columns={
+        'Economy': 'Country',
+        'Code': 'ISO3',
+        'Region': 'Region'
+    })
+
+    # Filter only selected countries
+    df_filtered = df_clean[df_clean['ISO3'].isin(countries)].copy()
+
+    # Rename country names using the defined mapping
+    df_filtered['Country'] = df_filtered['Country'].replace(COUNTRY_RENAME_MAP)
+
+    # Save cleaned file
+    df_filtered.to_csv(output_path, index=False)
+
+    return df_filtered
 
 def population(raw_path, output_path, countries=SELECTED_COUNTRIES):
     df = pd.read_csv(raw_path, skiprows=4)
@@ -313,7 +334,7 @@ def learning_outcome(raw_path, output_path, countries=SELECTED_COUNTRIES):
     df = df.rename(columns={
         'Entity': 'Country',
         'Code': 'ISO3',
-        'Harmonized test scores': 'test_scores'
+        'Harmonized test scores': 'learning_scores'
     })
 
     # Ensure Year is integer
