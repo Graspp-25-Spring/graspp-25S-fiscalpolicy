@@ -170,3 +170,5 @@ data/interim/health_expenditure_1.csv
 data/interim/GDP_percapita_1.csv
 data/interim/GDP_percapita_2.csv
 .gitignore
+notebooks/notes.ipynb
+data/interim/cek.csv
