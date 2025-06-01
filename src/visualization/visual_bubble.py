@@ -11,7 +11,7 @@ def plot_dependency_bubbles(change_df):
     top5_top_left = top_left.sort_values(by='Delta_Old', ascending=False).head(5)
 
     # Plot
-    plt.figure(figsize=(7, 7))
+    plt.figure(figsize=(8, 6))
     sns.scatterplot(
         data=change_df,
         x='Delta_Young',
