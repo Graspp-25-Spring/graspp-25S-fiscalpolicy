@@ -1,10 +1,26 @@
 # 📁 graspp-25S-fiscalpolicy
 
-## 👥 Team Members
+## 👥 Team Members & Tasks
 - Nomin-Erdene Munkhjargal  
+    - Add descriptive statistics,
+    - Add average fiscal, outcome, and demographic indicators
+    - Add correlation matrix
+    - Add distribution of expenditures by income level
+    - Add plot expenditures vs life expectancy
 - Fauziah Ramadhani  
+    - Add plot dependency ratio vs health expenditure by income level
+    - Add plot dependency ratio vs health expenditure by regional
+    - Add plot dependency ratio vs education expenditure by income level
+    - Add plot dependency ratio vs education expenditure by regional
 - Patchara Pornpragit  
+    - Add regression education expenditure on dependency ratio
+    - Add regression government consumption on dependency ratio
+    - create an index for government expenditure efficiency by creating HEE
 - Erlangga Gilang Pradana  
+    - Setup and data loading
+    - Add additional plot (aging society, demographic shifts, age distribtuion pyramid)
+    - Add regression health expenditure on dependency ratio
+    - Do a projection of expenditures up to 2050
 
 ---
 

@@ -401,3 +401,114 @@ def mortality(raw_path, output_path, countries=SELECTED_COUNTRIES):
 
     df_long.to_csv(output_path, index=False)
     return df_long
+
+def dependency_ratio_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    df = pd.read_csv(raw_path, skiprows=4)
+
+    # Normalize column names: '1960 [YR1960]' → '1960'
+    df.columns = [col.split(' ')[0] if col[:4].isdigit() else col for col in df.columns]
+
+    df = df[df['Country Code'].isin(countries)]
+
+    years = [str(y) for y in range(2000, 2051)]
+    df = df[['Country Name', 'Country Code'] + years]
+
+    df_long = df.melt(
+        id_vars=['Country Name', 'Country Code'],
+        var_name='Year',
+        value_name='Dependency_Ratio'
+    )
+
+    df_long = df_long.rename(columns={
+        'Country Name': 'Country',
+        'Country Code': 'ISO3'
+    })
+
+    df_long['Country'] = df_long['Country'].replace(COUNTRY_RENAME_MAP)
+
+    df_long['Year'] = df_long['Year'].astype(int)
+    df_long = df_long.sort_values(by=['Country', 'Year']).reset_index(drop=True)
+
+    df_long.to_csv(output_path, index=False)
+    return df_long
+
+def clean_trade_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    df = pd.read_csv(raw_path, skiprows=4)
+
+    df = df[df['Country Code'].isin(countries)]
+
+    years = [str(y) for y in range(2000, 2023)]
+    df = df[['Country Name', 'Country Code'] + years]
+
+    df_long = df.melt(
+        id_vars=['Country Name', 'Country Code'],
+        var_name='Year',
+        value_name='trade_gdp'
+    )
+
+    df_long = df_long.rename(columns={
+        'Country Name': 'Country',
+        'Country Code': 'ISO3'
+    })
+
+    df_long['Country'] = df_long['Country'].replace(COUNTRY_RENAME_MAP)
+
+    df_long['Year'] = df_long['Year'].astype(int)
+    df_long = df_long.sort_values(by=['Country', 'Year']).reset_index(drop=True)
+
+    df_long.to_csv(output_path, index=False)
+    return df_long
+
+def clean_consumption_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    df = pd.read_csv(raw_path, skiprows=4)
+
+    df = df[df['Country Code'].isin(countries)]
+
+    years = [str(y) for y in range(2000, 2023)]
+    df = df[['Country Name', 'Country Code'] + years]
+
+    df_long = df.melt(
+        id_vars=['Country Name', 'Country Code'],
+        var_name='Year',
+        value_name='consumption_gdp'
+    )
+
+    df_long = df_long.rename(columns={
+        'Country Name': 'Country',
+        'Country Code': 'ISO3'
+    })
+
+    df_long['Country'] = df_long['Country'].replace(COUNTRY_RENAME_MAP)
+
+    df_long['Year'] = df_long['Year'].astype(int)
+    df_long = df_long.sort_values(by=['Country', 'Year']).reset_index(drop=True)
+
+    df_long.to_csv(output_path, index=False)
+    return df_long
+
+def gov_consumption_data(raw_path, output_path, countries=SELECTED_COUNTRIES):
+    df = pd.read_csv(raw_path, skiprows=4)
+
+    df = df[df['Country Code'].isin(countries)]
+
+    years = [str(y) for y in range(2000, 2023)]
+    df = df[['Country Name', 'Country Code'] + years]
+
+    df_long = df.melt(
+        id_vars=['Country Name', 'Country Code'],
+        var_name='Year',
+        value_name='gov_consumption_gdp'
+    )
+
+    df_long = df_long.rename(columns={
+        'Country Name': 'Country',
+        'Country Code': 'ISO3'
+    })
+
+    df_long['Country'] = df_long['Country'].replace(COUNTRY_RENAME_MAP)
+
+    df_long['Year'] = df_long['Year'].astype(int)
+    df_long = df_long.sort_values(by=['Country', 'Year']).reset_index(drop=True)
+
+    df_long.to_csv(output_path, index=False)
+    return df_long
