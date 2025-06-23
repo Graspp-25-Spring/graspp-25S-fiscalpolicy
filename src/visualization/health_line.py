@@ -6,7 +6,7 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from PIL import Image
 
 def get_health_data(
-    path="../data/interim/merged_data_with_health.csv",
+    path="../data/final/merged_data_health_projection.csv",
     iso_codes=None
 ):
     if iso_codes is None:

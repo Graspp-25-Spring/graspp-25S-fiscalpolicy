@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 from cleaning_data import (
     clean_health_data, clean_education, dependency_ratio_data,
@@ -40,6 +41,19 @@ def load_and_merge_all_data():
     merged = merged.merge(df_population, on=["ISO3", "Year", "Country"], how="outer")
     merged = merged.merge(df_income_level, on=["ISO3", "Country"], how="left")
     merged = merged.merge(df_region, on=["ISO3", "Country"], how="left")
-   
-    
+
+    for col in [
+        'Dependency_Ratio',
+        'Dependency_Ratio_Old',
+        'Dependency_Ratio_Young',
+        'Population'
+    ]:
+        merged[col] = (
+            merged[col]
+            .astype(str)                      # ensure can run string ops
+            .str.replace(',', '')             # drop thousands separators
+            .str.strip()                      # drop leading/trailing spaces
+            .pipe(pd.to_numeric, errors='coerce')  # convert, invalid→NaN
+        )
+ 
     return merged
