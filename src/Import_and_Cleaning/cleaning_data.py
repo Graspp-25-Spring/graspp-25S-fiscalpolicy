@@ -1,7 +1,7 @@
 import pandas as pd
 
 SELECTED_COUNTRIES = [
-    'ARG', 'AUS', 'ARM', 'BGD', 'BRA', 'CAN', 'CHL', 'CHN', 'CYP', 'CZE', 'ECU', 'EGY', 'ETH',
+    'ARG', 'AUS', 'ARM', 'BGD', 'BRA', 'CAN', 'CHL', 'CHN', 'CYP', 'CZE', 'ECU', 'EGY', 'ETH', 'FRA',
     'DEU', 'GRC', 'GBR', 'GTM', 'IRL', 'IDN', 'IND', 'IRN', 'JOR', 'JPN', 'KAZ', 'KEN', 'KGZ', 'LBN',
     'MEX', 'MYS', 'MNG', 'MAR', 'MMR', 'NLD', 'NZL', 'NIC', 'NGA', 'PAK', 'PER', 'PHL', 'ROU',
     'RUS', 'SGP', 'SRB', 'SVK', 'KOR', 'TJK', 'THA', 'TUR', 'TUN', 'UKR', 'USA', 'URY', 'UZB', 'VNM'

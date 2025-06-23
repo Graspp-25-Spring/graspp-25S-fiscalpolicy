@@ -11,13 +11,13 @@ def get_health_data(
 ):
     if iso_codes is None:
         iso_codes = [
-            "USA","KOR","JPN","CAN","BRA","CHL",
+            "USA","KOR","JPN","CAN","BRA","CHL", "FRA",
             "CHN","GBR","THA","IDN","IND","RUS","VNM","MNG"
         ]
 
     name_map = {
         "USA":"United States","KOR":"South Korea","JPN":"Japan",
-        "CAN":"Canada","BRA":"Brazil","CHL":"Chile","CHN":"China",
+        "CAN":"Canada","BRA":"Brazil","CHL":"Chile", "FRA":"France", "CHN":"China",
         "GBR":"United Kingdom","THA":"Thailand","IDN":"Indonesia","IND":"India",
         "RUS":"Russia","VNM":"Vietnam","MNG":"Mongolia"
     }
