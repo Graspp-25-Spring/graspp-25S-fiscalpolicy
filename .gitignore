@@ -142,7 +142,11 @@ venv.bak/
 
 # mkdocs documentation
 /site
+<<<<<<< Updated upstream
 
+=======
+# overleaf
+>>>>>>> Stashed changes
 # mypy
 .mypy_cache/
 .dmypy.json
