@@ -92,7 +92,7 @@ def plot_health_lines(df):
     )
 
     # 4) labels
-    plt.title("Health Expenditure (% of GDP) 2000–2050", fontsize=16)
+    #plt.title("Health Expenditure (% of GDP) 2000–2050", fontsize=16)
     plt.xlabel("Year", fontsize=12)
     plt.ylabel("Health Expenditure (% GDP)", fontsize=12)
 

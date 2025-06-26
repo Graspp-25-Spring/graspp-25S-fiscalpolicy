@@ -28,7 +28,7 @@ def plot_dependency_ratio_lines(df_selected):
 
         plt.text(x + 4, y, country, va='center', fontsize=7)
 
-    plt.title("Old-Age Dependency Ratio Projection of Selected Countries", fontsize=14)
+    #plt.title("Old-Age Dependency Ratio Projection of Selected Countries", fontsize=14)
     plt.xlabel("Year", fontsize=12)
     plt.ylabel("Old-Age Dependency Ratio (%)", fontsize=12)
     plt.xlim(df_selected['Year'].min(), df_selected['Year'].max() + 10)

@@ -1,0 +1,24 @@
+\begin{table}
+\caption{Regression Summary of Health Expenditure}
+\label{tab3}
+\begin{tabular}{lrrrrr}
+\toprule
+ & Pooled OLS & Country FE & Country & Covid FE & Country & Covid FE (clustered) & Lag \\
+\midrule
+\textbf{Dependency Ratio (Old)} & 0.118*** & 0.180*** & 0.157*** & 0.157*** & 0.564*** \\
+\textbf{} & (0.010) & (0.011) & (0.012) & (0.025) & (0.211) \\
+\textbf{Lagged Dependency Ratio (Old)} &  &  &  &  & -0.425* \\
+\textbf{} &  &  &  &  & (0.217) \\
+\textbf{Log GDP per capita} & 0.792*** & 0.359*** & 0.342*** & 0.342** & 0.315** \\
+\textbf{} & (0.062) & (0.057) & (0.056) & (0.150) & (0.155) \\
+\textbf{Trade-to-GDP} & -0.010*** & -0.003** & -0.002 & -0.002 & -0.002 \\
+\textbf{} & (0.001) & (0.002) & (0.002) & (0.005) & (0.005) \\
+\textbf{R-squared} & 0.503 & 0.925 & 0.926 & 0.926 & 0.927 \\
+\textbf{R-squared Adj.} & 0.502 & 0.921 & 0.922 & 0.922 & 0.923 \\
+\textbf{Observations} & 1,155 & 1,155 & 1,155 & 1,155 & 1,155 \\
+\textbf{R-squared} & 0.503 & 0.925 & 0.926 & 0.926 & 0.927 \\
+\textbf{Country FE} & No & Yes & Yes & Yes & Yes \\
+\textbf{Covid FE} & No & No & Yes & Yes & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
