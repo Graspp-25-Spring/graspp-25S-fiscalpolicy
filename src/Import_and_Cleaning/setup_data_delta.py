@@ -51,7 +51,7 @@ def prepare_data_dependency():
 
 def get_selected_dependency_data(selected_codes=None):
     if selected_codes is None:
-        selected_codes = ['CHN', 'IDN', 'JPN', 'EUU', 'USA', 'THA', 'VNM']
+        selected_codes = ['JPN', 'IDN', 'BRA', 'CHN', 'EUU', 'USA', 'THA', 'VNM']
 
     df = prepare_data_dependency()
     df = df[df['ISO3'].isin(selected_codes)].copy()
@@ -60,9 +60,10 @@ def get_selected_dependency_data(selected_codes=None):
     df = df.dropna(subset=['Year', 'Dependency_Ratio_Old'])
 
     iso3_to_country = {
-        'CHN': 'China',
-        'IDN': 'Indonesia',
         'JPN': 'Japan',
+        'IDN': 'Indonesia',
+        'CHN': 'China',
+        'BRA': 'Brazil',
         'EUU': 'Europe',
         'USA': 'US',
         'THA': 'Thailand',
