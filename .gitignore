@@ -143,6 +143,7 @@ venv.bak/
 # mkdocs documentation
 /site
 overleaf
+overleaf/
 # mypy
 .mypy_cache/
 .dmypy.json
